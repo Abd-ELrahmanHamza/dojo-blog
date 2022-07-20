@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Blogs from "./BlogsList";
 import useFetch from "./useFetch";
 const Home = () => {
@@ -14,12 +13,7 @@ const Home = () => {
       {isPending && <div>Loading...</div>}
       {
         /* All blogs */
-        blogs && (
-          <Blogs
-            blogs={blogs}
-            title={"All blogs"}
-          />
-        )
+        blogs && <Blogs blogs={blogs} title={"All blogs"} />
       }
     </div>
   );
