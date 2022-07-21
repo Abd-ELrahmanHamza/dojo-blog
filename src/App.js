@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Create from "./Create";
 
 function App() {
+  // const homes = [<Home key="1" />, <Home key="2" />];
   return (
     <Router>
       <div className="App">

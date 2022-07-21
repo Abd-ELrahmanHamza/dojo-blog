@@ -19,10 +19,21 @@ const useFetch = (url) => {
     };
 
     const handleFetchError = (error) => {
+      if (error.name === "AbortError") return;
       setError(error.message);
       setIsPending(false);
     };
-    fetch(url).then(fetchResponse).then(setResponse).catch(handleFetchError);
+
+    const abortController = new AbortController();
+
+    setTimeout(() => {
+      fetch(url, { signal: abortController.signal })
+        .then(fetchResponse)
+        .then(setResponse)
+        .catch(handleFetchError);
+    }, 1000);
+
+    return () => abortController.abort();
   }, [url]);
 
   return { data, isPending, error };
