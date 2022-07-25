@@ -15,7 +15,7 @@
 
 ## Description
 
-A mini blog where you can list differente articles, delete article, Add new article
+A mini blog where you can list differente articles, delete article, Add new article built using **React**
 
 ## Screenshots
 
